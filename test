@@ -1,0 +1,26 @@
+```python
+# test/test_ai_module.py
+
+import unittest
+import ai_module
+
+class TestAIModule(unittest.TestCase):
+    def test_ai_class_exists(self):
+        self.assertTrue(hasattr(ai_module, 'AI'))
+
+    def test_ai_can_be_instantiated(self):
+        ai = ai_module.AI()
+        self.assertIsInstance(ai, ai_module.AI)
+
+    def test_ai_has_get_next_lesson_method(self):
+        ai = ai_module.AI()
+        self.assertTrue(hasattr(ai, 'get_next_lesson'))
+
+    def test_get_next_lesson_returns_expected_output(self):
+        ai = ai_module.AI()
+        lesson = ai.get_next_lesson()
+        self.assertIsInstance(lesson, str)  # assuming lessons are strings
+
+if __name__ == "__main__":
+    unittest.main()
+```
